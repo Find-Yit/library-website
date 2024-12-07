@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>三层书架展示</title>
+<style>
+    body {
+        font-family: sans-serif;
+        background: #f5f5f5;
+        margin: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .bookshelf {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .shelf {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        width: 80%;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    /* 简单的书架底板效果 */
+    .shelf::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        height: 10px;
+        background: #8B5A2B;
+        z-index: -1;
+        border-radius: 2px;
+    }
+
+    .book {
+        width: 100px;
+        position: relative;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .book-outline {
+        width: 100px;
+        height: 140px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background: linear-gradient(135deg, #eee, #ddd);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 8px;
+    }
+
+    .book-title {
+        font-size: 14px;
+        color: #333;
+    }
+
+    /* ISBN提示框 */
+    .isbn {
+        display: none;
+        position: absolute;
+        bottom: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #fff;
+        border: 1px solid #333;
+        padding: 5px 10px;
+        font-size: 12px;
+        white-space: nowrap;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .book:hover .isbn {
+        display: block;
+    }
+</style>
+</head>
+<body>
+
+<h1>三层书架展示</h1>
+
+<div class="bookshelf">
+    <!-- 第一层书架 -->
+    <div class="shelf">
+        <div class="book">
+            <div class="book-outline">草房子</div>
+            <div class="book-title">《草房子》</div>
+            <div class="isbn">ISBN: 978-7-5555-0001-3</div>
+        </div>
+        <div class="book">
+            <div class="book-outline">爱的教育</div>
+            <div class="book-title">《爱的教育》</div>
+            <div class="isbn">ISBN: 978-7-5555-0002-0</div>
+        </div>
+        <div class="book">
+            <div class="book-outline">小王子</div>
+            <div class="book-title">《小王子》</div>
+            <div class="isbn">ISBN: 978-7-5555-0003-7</div>
+        </div>
+        <div class="book">
+            <div class="book-outline">夏洛的网</div>
+            <div class="book-title">《夏洛的网》</div>
+            <div class="isbn">ISBN: 978-7-5555-0004-4</div>
+        </div>
+    </div>
+
+    <!-- 第二层书架 -->
+    <div class="shelf">
+        <div class="book">
+            <div class="book-outline">城南旧事</div>
+            <div class="book-title">《城南旧事》</div>
+            <div class="isbn">ISBN: 978-7-5555-0005-1</div>
+        </div>
+        <div class="book">
+            <div class="book-outline">鲁滨孙</div>
+            <div class="book-title">《鲁滨孙漂流记》</div>
+            <div class="isbn">ISBN: 978-7-5555-0006-8</div>
+        </div>
+        <div class="book">
+            <div class="book-outline">皮皮</div>
+            <div class="book-title">《长袜子皮皮》</div>
+            <div class="isbn">ISBN: 978-7-5555-0007-5</div>
+        </div>
+        <div class="book">
+            <div class="book-outline">昆虫记</div>
+            <div class="book-title">《昆虫记》</div>
+            <div class="isbn">ISBN: 978-7-5555-0008-2</div>
+        </div>
+    </div>
+
+    <!-- 第三层书架 -->
+    <div class="shelf">
+        <div class="book">
+            <div class="book-outline">吹号的天鹅</div>
+            <div class="book-title">《吹小号的天鹅》</div>
+            <div class="isbn">ISBN: 978-7-5555-0009-9</div>
+        </div>
+        <div class="book">
+            <div class="book-outline">中国古代</div>
+            <div class="book-title">《中国古代神话故事》</div>
+            <div class="isbn">ISBN: 978-7-5555-0010-5</div>
+        </div>
+        <div class="book">
+            <div class="book-outline">十万问</div>
+            <div class="book-title">《十万个为什么》</div>
+            <div class="isbn">ISBN: 978-7-5555-0011-2</div>
+        </div>
+        <div class="book">
+            <div class="book-outline">秘密花园</div>
+            <div class="book-title">《秘密花园》</div>
+            <div class="isbn">ISBN: 978-7-5555-0012-9</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
